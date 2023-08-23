@@ -49,6 +49,8 @@ public class SalesForceLogin {
 	    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		driver=new ChromeDriver(options);
 		
+		//chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		
 		driver.get("https://login.salesforce.com");
 		
 		
