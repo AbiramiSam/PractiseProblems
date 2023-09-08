@@ -30,20 +30,17 @@ import org.junit.internal.runners.model.EachTestNotifier;
  * return the string
  * 
  * 
- * && key.charAt(i)!=' '
- * 
- * 
  * 
  */
 public class LC2325_DecodeTheMessage {
 	@Test
 	public void test() {
-		System.out.println(decodeMessage1("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"));
+		System.out.println(decodeMessage("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"));
 	}
 	
 	@Test
 	public void test1() {
-		System.out.println(decodeMessage1("eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb"));
+		System.out.println(decodeMessage("eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb"));
 	}
 	
 	public String decodeMessage1(String key, String message) {
@@ -68,21 +65,32 @@ public class LC2325_DecodeTheMessage {
 	    }
 	 
 	 public String decodeMessage(String key, String message) {
+		 key=key.replaceAll(" ", "");
 		 String output="";
-		 int count=0;
-		 char[] arr=new char[26];
+		 String temp="";
+		 char ch=' ';
+		 char c='a';
+		 int index=0;
 		 for(int i=0;i<key.length();i++) {
-			 if(key.charAt(i)!=' ') {
-			 if(count>=0 && count<26) {
-			 arr[count]=key.charAt(i);
-			 count++;
-			 }
-			 else
-				 break;
-			 }
+			if(!temp.contains(String.valueOf(key.charAt(i)))){
+				temp=temp+key.charAt(i);
+			}
 		 }
-		 System.out.println(Arrays.toString(arr));
+		 System.out.println(temp);
+		 for(int i=0;i<message.length();i++) {
+			 ch=message.charAt(i);
+			 if(temp.contains(String.valueOf(message.charAt(i)))) {
+				 index=temp.indexOf(ch)+97;
+				 c=(char)index;
+				 output=output+c;
+				} else { 
+					output=output+message.charAt(i); 
+					}
+					 
+		 }
+		 
 		 return output;
+		 
 	 }
 	 
 }
