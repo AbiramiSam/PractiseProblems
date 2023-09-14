@@ -39,9 +39,6 @@ import org.junit.Test;
  * else add false
  * return the boolean array
  * 
- * 
- * 
- * 
  */
 public class LC1431_KidsWiththeGreatestNumberofCandies {
 	@Test
