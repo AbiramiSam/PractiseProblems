@@ -40,6 +40,7 @@ public class LC2379_MinimumRecolorstoGetKConsecutiveBlack {
 	 public int minimumRecolors(String blocks, int k) {
 		 int max=Integer.MAX_VALUE;
 	        int limit = blocks.length() - k;
+	        System.out.println("limit"+limit);
 	        int pointer1=0;
 	        while(pointer1<=limit)
 	        {

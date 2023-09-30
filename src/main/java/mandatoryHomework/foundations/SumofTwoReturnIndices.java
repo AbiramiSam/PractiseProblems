@@ -4,6 +4,7 @@
 package mandatoryHomework.foundations;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,4 +49,11 @@ public class SumofTwoReturnIndices {
 		return new int[] {-1,-1};
 	}
 
+	
+	/*
+	 * public int[] twoSum(int[] nums, int target) { HashMap<Integer,Integer>
+	 * hmap=new HashMap<Integer, Integer>();
+	 * 
+	 * }
+	 */
 }

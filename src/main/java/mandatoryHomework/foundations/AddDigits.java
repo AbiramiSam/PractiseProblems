@@ -73,4 +73,34 @@ public class AddDigits {
 		return total;
 	}
 	
+	@Test
+	public void test12() {
+		System.out.println(longestEvenWord());
+	}
+	public static String longestEvenWord() {
+		String sentence="An in wa se te";
+        String[] words=sentence.split(" ");
+        int[] lenArr=new int[words.length];
+        int index=-1;
+        int max=Integer.MIN_VALUE;
+        String output="";
+        for(int i=0;i<words.length;i++){
+            lenArr[i]=words[i].length();
+            if(lenArr[i]%2==0){
+                if(lenArr[i]>max){
+                    max=lenArr[i];
+                    index=i;
+                }
+            }
+        }
+        if(index>0){
+            output=words[index];
+        }
+        else{
+            output="00";
+        }
+        return output;
+
+    }
+	
 }
